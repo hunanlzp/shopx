@@ -1,0 +1,89 @@
+# 编译输出
+target/
+dist/
+build/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# IDE配置
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+.settings/
+.classpath
+.project
+.factorypath
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# 依赖管理
+node_modules/
+.mvn/
+mvnw
+mvnw.cmd
+
+# 环境变量
+.env
+.env.local
+.env.*.local
+
+# 日志文件
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 测试覆盖率
+coverage/
+.nyc_output/
+
+# 临时文件
+tmp/
+temp/
+*.tmp
+
+# 上传文件
+uploads/
+static/uploads/
+
+# 数据库文件
+*.db
+*.sqlite
+*.sqlite3
+
+# 打包文件
+*.zip
+*.tar
+*.tar.gz
+
+# 缓存
+.cache/
+.parcel-cache/
+.npm/
+.eslintcache
+
+# 构建工具
+.vite/
+.next/
+.nuxt/
+
+# 监控数据
+prometheus_data/
+grafana_data/
+
+# 其他
+*.pid
+*.seed
+*.pid.lock
+

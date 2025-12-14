@@ -1,0 +1,654 @@
+/* 全局样式重置 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background-attachment: fixed;
+}
+
+#root {
+  height: 100%;
+}
+
+/* 应用布局样式 */
+.app-layout {
+  min-height: 100vh;
+}
+
+.main-layout {
+  margin-left: 200px;
+}
+
+.main-content {
+  padding: 24px;
+  background: transparent;
+  min-height: calc(100vh - 64px);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .main-layout {
+    margin-left: 0;
+  }
+  
+  .main-content {
+    padding: 16px;
+  }
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* 卡片样式 */
+.product-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* AR/VR体验按钮 */
+.ar-vr-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  color: white;
+  font-weight: 500;
+}
+
+.ar-vr-button:hover {
+  background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+  transform: translateY(-1px);
+}
+
+/* 协作购物样式 */
+.collaboration-session {
+  border: 2px solid #1890ff;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #e6f7ff 0%, #f0f9ff 100%);
+}
+
+/* 推荐标签样式 */
+.recommendation-tag {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%);
+  color: white;
+  border: none;
+  font-weight: 500;
+}
+
+/* 加载动画 */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+/* 空状态样式 */
+.empty-state {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+
+.empty-state-icon {
+  font-size: 64px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+/* 商品列表页面样式 */
+.product-list-page .product-image-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+}
+
+.product-list-page .product-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-list-page .product-card:hover .product-image {
+  transform: scale(1.1);
+}
+
+.product-list-page .product-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  backdrop-filter: blur(4px);
+}
+
+.product-list-page .product-card:hover .product-overlay {
+  opacity: 1;
+}
+
+.product-list-page .product-overlay .ant-btn {
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.product-list-page .product-overlay .ant-btn:hover {
+  transform: scale(1.1);
+  background: white;
+}
+
+.product-list-page .product-info {
+  padding: 16px 0;
+}
+
+.product-list-page .product-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #262626;
+}
+
+.product-list-page .product-description {
+  font-size: 14px;
+  color: #8c8c8c;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-list-page .product-price {
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+}
+
+.product-list-page .product-tags {
+  margin-bottom: 12px;
+}
+
+.product-list-page .product-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 商品详情页面样式 */
+.product-detail-page .product-image-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.product-detail-page .main-image {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.product-detail-page .thumbnail-list {
+  display: flex;
+  gap: 8px;
+}
+
+.product-detail-page .thumbnail {
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.product-detail-page .thumbnail.active {
+  border-color: #1890ff;
+}
+
+.product-detail-page .product-info {
+  padding: 0;
+}
+
+.product-detail-page .product-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #262626;
+}
+
+.product-detail-page .product-price-section {
+  margin-bottom: 16px;
+}
+
+.product-detail-page .current-price {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1890ff;
+  margin-right: 16px;
+}
+
+.product-detail-page .recycle-value {
+  font-size: 14px;
+  color: #52c41a;
+}
+
+.product-detail-page .product-rating {
+  margin-bottom: 16px;
+}
+
+.product-detail-page .rating-text {
+  margin-left: 8px;
+  color: #8c8c8c;
+}
+
+.product-detail-page .product-description {
+  margin-bottom: 16px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.product-detail-page .product-tags {
+  margin-bottom: 16px;
+}
+
+.product-detail-page .product-actions {
+  margin-bottom: 16px;
+}
+
+.product-detail-page .product-stats {
+  padding: 16px 0;
+  border-top: 1px solid #f0f0f0;
+}
+
+.product-detail-page .stat-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.product-detail-page .stat-item span {
+  font-size: 14px;
+  color: #8c8c8c;
+}
+
+/* 推荐页面样式 */
+.recommendation-page .recommendation-controls {
+  padding: 16px 0;
+}
+
+.recommendation-page .ai-chat-controls {
+  padding: 16px 0;
+}
+
+/* 协作购物页面样式 */
+.collaboration-page .chat-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.collaboration-page .participants {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.collaboration-page .chat-messages {
+  flex: 1;
+  padding: 8px 0;
+}
+
+.collaboration-page .chat-input {
+  padding-top: 8px;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* 个人中心页面样式 */
+.profile-page .user-avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-page .user-basic-info {
+  margin-top: 16px;
+}
+
+.profile-page .cart-summary {
+  padding: 16px 0;
+}
+
+.profile-page .recommendations-section,
+.profile-page .collaboration-section,
+.profile-page .recycle-section,
+.profile-page .notifications-section {
+  padding: 16px 0;
+}
+
+/* Ant Design组件全局样式优化 */
+.ant-card {
+  border-radius: 16px !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08) !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  transition: all 0.3s ease !important;
+}
+
+.ant-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+}
+
+.ant-btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border: none !important;
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.ant-btn-primary:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4) !important;
+}
+
+.ant-input,
+.ant-select-selector {
+  border-radius: 10px !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease !important;
+}
+
+.ant-input:focus,
+.ant-select-focused .ant-select-selector {
+  border-color: #667eea !important;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1) !important;
+}
+
+.ant-tag {
+  border-radius: 12px !important;
+  padding: 4px 12px !important;
+  font-weight: 500 !important;
+  border: none !important;
+}
+
+.ant-pagination-item {
+  border-radius: 8px !important;
+  transition: all 0.3s ease !important;
+}
+
+.ant-pagination-item:hover {
+  transform: translateY(-2px) !important;
+}
+
+.ant-pagination-item-active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  border-color: transparent !important;
+}
+
+.ant-pagination-item-active a {
+  color: white !important;
+}
+
+/* Header样式 - 现代化设计 */
+.header {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-left .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 8px 0;
+}
+
+.header-left .logo:hover {
+  transform: translateY(-1px);
+}
+
+.header-left .logo-text {
+  font-size: 24px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+}
+
+.header-left .logo-subtitle {
+  font-size: 11px;
+  color: #999;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-right .ant-btn {
+  height: 40px;
+  padding: 0 16px;
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header-right .ant-btn:hover {
+  background: rgba(102, 126, 234, 0.1);
+  transform: translateY(-1px);
+}
+
+.header-right .user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 6px 16px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.header-right .user-info:hover {
+  background: rgba(102, 126, 234, 0.08);
+  border-color: rgba(102, 126, 234, 0.2);
+  transform: translateY(-1px);
+}
+
+.header-right .username {
+  font-size: 14px;
+  color: #262626;
+  font-weight: 500;
+}
+
+.header-right .ant-avatar {
+  border: 2px solid rgba(102, 126, 234, 0.2);
+  transition: all 0.3s ease;
+}
+
+.header-right .user-info:hover .ant-avatar {
+  border-color: rgba(102, 126, 234, 0.4);
+  transform: scale(1.05);
+}
+
+/* Sidebar样式 - 现代化设计 */
+.sidebar {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
+  position: fixed;
+  left: 0;
+  top: 64px;
+  bottom: 0;
+  z-index: 100;
+  border-right: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.sidebar-header {
+  padding: 24px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
+}
+
+.sidebar-header h3 {
+  margin: 0;
+  color: #262626;
+  font-size: 16px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sidebar-menu {
+  border: none;
+  background: transparent;
+  padding: 12px 8px;
+}
+
+.sidebar-menu .ant-menu-item {
+  margin: 6px 8px;
+  border-radius: 12px;
+  height: 48px;
+  line-height: 48px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 500;
+}
+
+.sidebar-menu .ant-menu-item:hover {
+  background: rgba(102, 126, 234, 0.08);
+  transform: translateX(4px);
+}
+
+.sidebar-menu .ant-menu-item-selected {
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+  color: #667eea;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+.sidebar-menu .ant-menu-item-selected::after {
+  display: none;
+}
+
+.sidebar-menu .ant-menu-item-icon {
+  font-size: 18px;
+  margin-right: 12px;
+}
+
+.sidebar-menu .ant-menu-submenu-title {
+  margin: 6px 8px;
+  border-radius: 12px;
+  height: 48px;
+  line-height: 48px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.sidebar-menu .ant-menu-submenu-title:hover {
+  background: rgba(102, 126, 234, 0.08);
+}
+
+/* 认证页面样式 */
+.auth-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.auth-card {
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.auth-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.auth-footer {
+  text-align: center;
+}
+
+.auth-features {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.auth-features .ant-typography {
+  margin-bottom: 8px;
+}
+
+/* Header样式增强 */
+.header-left .logo {
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.header-left .logo:hover {
+  opacity: 0.8;
+}

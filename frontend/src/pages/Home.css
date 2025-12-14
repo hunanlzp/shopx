@@ -1,0 +1,433 @@
+/* 首页现代化样式 */
+.home-page {
+  animation: fadeIn 0.5s ease-in;
+  min-height: 100vh;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* 现代化欢迎横幅 */
+.welcome-banner-modern {
+  position: relative;
+  margin-bottom: 32px;
+  border-radius: 24px;
+  overflow: hidden;
+  border: none;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.banner-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.banner-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
+}
+
+.banner-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  opacity: 0.6;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1;
+  padding: 48px;
+  color: white;
+}
+
+.banner-title {
+  color: white !important;
+  font-size: 48px !important;
+  font-weight: 700 !important;
+  margin-bottom: 16px !important;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+.title-icon {
+  font-size: 48px;
+  animation: float 3s ease-in-out infinite;
+}
+
+.banner-subtitle {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  margin-bottom: 24px !important;
+}
+
+.banner-description {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 18px !important;
+  line-height: 1.8 !important;
+  margin-bottom: 32px !important;
+}
+
+.banner-actions {
+  margin-top: 32px;
+}
+
+.banner-btn-primary {
+  height: 48px;
+  padding: 0 32px;
+  font-size: 16px;
+  font-weight: 600;
+  background: white;
+  color: #667eea;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.banner-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.banner-btn-secondary {
+  height: 48px;
+  padding: 0 32px;
+  font-size: 16px;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.banner-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+}
+
+.banner-image-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner-image-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.banner-image-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 4s ease-in-out infinite;
+}
+
+.banner-image {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.image-placeholder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 功能区域样式 */
+.features-section,
+.highlights-section {
+  margin-bottom: 32px;
+  background: transparent;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-title {
+  font-size: 36px !important;
+  font-weight: 700 !important;
+  margin-bottom: 16px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-icon {
+  font-size: 36px;
+  color: #667eea;
+}
+
+.section-description {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 0 !important;
+}
+
+/* 现代化功能卡片 */
+.feature-card-modern {
+  position: relative;
+  border-radius: 20px !important;
+  padding: 32px 24px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card-modern::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.feature-card-modern:hover::before {
+  opacity: 1;
+}
+
+.feature-card-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  transition: left 0.5s ease;
+}
+
+.feature-card-modern:hover .feature-card-shine {
+  left: 100%;
+}
+
+.feature-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: white;
+}
+
+.feature-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 24px;
+}
+
+.feature-icon-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+}
+
+.feature-icon {
+  position: relative;
+  font-size: 48px;
+  z-index: 1;
+}
+
+.feature-title {
+  color: white !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  margin-bottom: 12px !important;
+}
+
+.feature-description {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-size: 14px !important;
+  line-height: 1.6 !important;
+  margin-bottom: 20px !important;
+}
+
+.feature-action-btn {
+  color: white !important;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.feature-action-btn:hover {
+  background: rgba(255, 255, 255, 0.2) !important;
+  transform: translateX(4px);
+}
+
+/* 平台特色列表 */
+.feature-highlight-modern {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px 24px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+
+.feature-highlight-modern:hover {
+  transform: translateX(8px);
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.12);
+}
+
+.highlight-tag {
+  font-size: 16px !important;
+  padding: 8px 16px !important;
+  border-radius: 12px !important;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 140px;
+  justify-content: center;
+}
+
+.tag-emoji {
+  font-size: 20px;
+}
+
+.highlight-text {
+  font-size: 16px;
+  color: #333;
+  flex: 1;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .banner-content {
+    padding: 32px 24px;
+  }
+
+  .banner-title {
+    font-size: 32px !important;
+  }
+
+  .title-icon {
+    font-size: 32px;
+  }
+
+  .banner-subtitle {
+    font-size: 18px !important;
+  }
+
+  .banner-description {
+    font-size: 16px !important;
+  }
+
+  .section-title {
+    font-size: 28px !important;
+  }
+
+  .feature-highlight-modern {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .highlight-tag {
+    min-width: auto;
+  }
+}
+

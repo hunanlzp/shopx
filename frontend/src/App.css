@@ -1,0 +1,50 @@
+/* App组件样式 - 现代化设计 */
+.app-layout {
+  min-height: 100vh;
+  background: transparent;
+}
+
+.main-layout {
+  margin-left: 200px;
+  transition: margin-left 0.3s ease;
+}
+
+.main-content {
+  padding: 32px;
+  background: transparent;
+  min-height: calc(100vh - 64px);
+  position: relative;
+}
+
+/* 响应式设计 */
+@media (max-width: 1200px) {
+  .main-layout {
+    margin-left: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-layout {
+    margin-left: 0;
+  }
+  
+  .main-content {
+    padding: 16px;
+  }
+}
+
+/* 页面过渡动画 */
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-content > * {
+  animation: pageFadeIn 0.5s ease-out;
+}
